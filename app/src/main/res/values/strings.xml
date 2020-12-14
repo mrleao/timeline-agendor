@@ -1,0 +1,31 @@
+<resources>
+
+    <!--
+    # LEGENDA COMPONENTES DE LAYOUT
+      app => aplicativo
+      lbl => label
+      btn => button
+
+    # LEGENDA PREFIXO  UI
+      nt => nova tarefa
+      tl => timeline
+
+    # sem prefixo da tela pode ser usada em qualquer UI, com prefixo não
+    # manter padrão prefixo ui > componente > nome
+    -->
+
+    <string name="app_name">Timeline</string>
+
+    <string name="nt_lbl_titulo">Nova tarefa</string>
+    <string name="nt_btn_agendar">Agendar tarefa</string>
+
+    <string name="tl_btn_adicionar">Adicionar terefa</string>
+
+    <string name="lbl_visitas">Visitas</string>
+    <string name="lbl_ligacoes">Ligações</string>
+    <string name="lbl_emails">E-mails</string>
+    <string name="lbl_quando">Quando?</string>
+    <string name="lbl_cliente">Cliente</string>
+
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- padrão android -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- cotumizado -->
+    <color name="verde_agendor">#51ff90</color>
+    <color name="azul_agendor">#332de6</color>
+    <color name="azul_escuro__agendor">#2621C8</color>
+    <color name="azul_bg_inputs">#7EDDE7EF</color>
+</resources>

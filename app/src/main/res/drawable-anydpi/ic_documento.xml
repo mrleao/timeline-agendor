@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/azul_agendor"
+    android:alpha="0.8">
+  <group android:scaleX="0.24948025"
+      android:scaleY="0.24948025"
+      android:translateX="2.7692308"
+      android:translateY="2.7692308">
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m63,72h-52a1,1 0,0 1,-1 -1v-68a1,1 0,0 1,1 -1h38a1,1 0,0 1,0.707 0.293l14,14a1,1 0,0 1,0.293 0.707v54a1,1 0,0 1,-1 1zM12,70h50v-52.586l-13.414,-13.414h-36.586z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m19.95,29a1,1 0,0 1,-0.707 -0.293l-2.45,-2.451a1,1 0,0 1,1.414 -1.414l1.743,1.744 5.85,-5.853a1,1 0,1 1,1.414 1.414l-6.557,6.553a1,1 0,0 1,-0.707 0.3z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m19.95,40.86a1,1 0,0 1,-0.707 -0.293l-2.45,-2.451a1,1 0,0 1,1.414 -1.416l1.743,1.744 5.85,-5.844a1,1 0,0 1,1.414 1.414l-6.555,6.555a1,1 0,0 1,-0.709 0.291z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m19.95,52.724a1,1 0,0 1,-0.707 -0.293l-2.45,-2.45a1,1 0,0 1,1.414 -1.414l1.743,1.743 5.85,-5.848a1,1 0,1 1,1.414 1.414l-6.555,6.555a1,1 0,0 1,-0.709 0.293z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m19.95,64.588a0.993,0.993 0,0 1,-0.707 -0.293l-2.45,-2.45a1,1 0,0 1,1.414 -1.414l1.743,1.743 5.85,-5.847a1,1 0,0 1,1.414 1.414l-6.557,6.559a0.993,0.993 0,0 1,-0.707 0.288z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m56.5,26.029h-24.33a1,1 0,0 1,0 -2h24.33a1,1 0,0 1,0 2z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m56.5,37.976h-24.33a1,1 0,0 1,0 -2h24.33a1,1 0,0 1,0 2z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m56.5,49.923h-24.33a1,1 0,0 1,0 -2h24.33a1,1 0,0 1,0 2z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m56.5,61h-24.33a1,1 0,0 1,0 -2h24.33a1,1 0,0 1,0 2z"/>
+    <path
+        android:fillColor="@color/azul_agendor"
+        android:pathData="m63,18h-14a1,1 0,0 1,-1 -1v-14a1,1 0,0 1,2 0v13h13a1,1 0,0 1,0 2z"/>
+  </group>
+</vector>
