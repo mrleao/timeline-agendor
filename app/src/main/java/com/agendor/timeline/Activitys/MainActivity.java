@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        teste = findViewById(R.id.textView3);
+        //teste = findViewById(R.id.textView3);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
 

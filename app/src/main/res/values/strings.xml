@@ -26,6 +26,7 @@
     <string name="lbl_emails">E-mails</string>
     <string name="lbl_quando">Quando?</string>
     <string name="lbl_cliente">Cliente</string>
+    <string name="documento">Documento</string>
 
 
 </resources>

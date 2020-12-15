@@ -18,23 +18,62 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".Activitys.MainActivity">
 
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/nt_img_btn_email2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/borda_redonda"
+                    android:contentDescription="@string/lbl_emails"
+                    android:src="@drawable/ic_mail_w"
+                    app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_telefone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+        </HorizontalScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/tl_fbtn_adicionar"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:clickable="true"
+        android:contentDescription="TODO"
+        android:cropToPadding="false"
+        android:foregroundGravity="center"
         android:onClick="openDialog"
         android:tint="#FFFFFF"
         app:backgroundTint="@color/verde_agendor"
         app:backgroundTintMode="add"
+        app:fabCustomSize="70dp"
+        app:fabSize="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tl_container_header"
-        app:srcCompat="@drawable/ic_plus" />
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/ic_plus"
+        app:useCompatPadding="false" />
 
     <ScrollView
         android:id="@+id/tl_sv_main"
@@ -47,18 +86,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tl_sv_main" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
