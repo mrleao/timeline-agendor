@@ -47,11 +47,20 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
     // data is passed into the constructor
     public CustomRecyclerViewAdapter(Context context, List<Tarefa> data) {
         this.mInflater = LayoutInflater.from(context);
-        this.mData = data;
+       // this.mData = data;
+        if (this.mData != null) {
+            this.mData.clear();
+            this.mData.addAll(data);
+        }
+        else {
+            this.mData = data;
+        }
+        notifyDataSetChanged();
     }
 
 
     public void updateList (List<Tarefa> items) {
+
             if (items != null && items.size() > 0) {
                 mData.clear();
                 mData.addAll(items);
@@ -61,8 +70,6 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
                 notifyDataSetChanged();
                 Lod.d("fsdfsdf", "o que que deu2");
             }
-
-
 
     }
 
@@ -121,10 +128,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
 
                 int color = Color.parseColor("#a6a3f5");
                 holder.lt_fabtn_icone.setBackgroundTintList(ColorStateList.valueOf(color));
-
                 holder.lt_container_info.setBackgroundResource(R.drawable.container_borda_azul);
-
-
             }
 
             switch(tarefa.getIdTipoTarefa()){

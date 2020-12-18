@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
     public void getDados(TextView tl_lbl_qtd_emails, TextView tl_lbl_qtd_visitas, TextView tl_lbl_qtd_reunioes, TextView tl_lbl_qtd_propostas, TextView tl_lbl_qtd_ligacoes, TextView tl_lbl_qtd_outros){
 
         this.tarefaService = new TarefaService(this);
+
         this.tarefaService.getAll("").setCallback(new FutureCallback<JsonArray>() {
             @Override
             public void onCompleted(Exception e, JsonArray result) {
@@ -178,6 +179,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
                     lt_view_barra3.setVisibility(View.VISIBLE);
                 }
 
+
             }
 
         });
@@ -193,8 +195,8 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
         NovaTarefaDialog ntDialog = new NovaTarefaDialog(new DialogCallback() {
             @Override
             public void onDialogCallback() {
-                adapter.updateList(tarefas);
                 getDados(tl_lbl_qtd_emails, tl_lbl_qtd_visitas, tl_lbl_qtd_reunioes, tl_lbl_qtd_propostas, tl_lbl_qtd_ligacoes, tl_lbl_qtd_outros);
+               // adapter.updateList(tarefas);
             }
         });
 
