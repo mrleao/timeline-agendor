@@ -42,6 +42,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
     private List<Tarefa> mData;
     private LayoutInflater mInflater;
     public ItemClickListener mClickListener;
+    private Log Lod;
 
     // data is passed into the constructor
     public CustomRecyclerViewAdapter(Context context, List<Tarefa> data) {
@@ -51,13 +52,18 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
 
 
     public void updateList (List<Tarefa> items) {
-        if (items != null && items.size() > 0) {
-            mData.clear();
-            mData.addAll(items);
-            notifyDataSetChanged();
-        }else{
-            notifyDataSetChanged();
-        }
+            if (items != null && items.size() > 0) {
+                mData.clear();
+                mData.addAll(items);
+                notifyDataSetChanged();
+                Lod.d("fsdfsdf", "o que que deu");
+            }else{
+                notifyDataSetChanged();
+                Lod.d("fsdfsdf", "o que que deu2");
+            }
+
+
+
     }
 
 

@@ -5,7 +5,7 @@
     android:id="@+id/tl_container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@android:color/white"
     tools:context=".Activitys.MainActivity">
 
     <View
@@ -26,8 +26,9 @@
         android:layout_marginBottom="50dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tl_container_header"
-        tools:layout_editor_absoluteX="-26dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl_container_header">
 
         <TextView
             android:id="@+id/textView"
@@ -43,8 +44,8 @@
             android:paddingTop="0dp"
             android:paddingRight="15dp"
             android:paddingBottom="0dp"
-            android:shadowColor="@color/black"
             android:text="@string/vazio"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -350,7 +351,6 @@
         android:id="@+id/tl_sv_main"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/white"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

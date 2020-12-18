@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
                 tl_lbl_qtd_reunioes.setText(reunioes_);
                 tl_lbl_qtd_visitas.setText(visitas_);
 
-
+                Log.d("ddd", "kfpksodf"+result.toString());
                 if (result.toString() == null || result.toString().trim().isEmpty() || result.toString().equals("[]")){
                     container_vazio.setVisibility(View.VISIBLE);
                     lt_view_barra3.setVisibility(View.GONE);
@@ -193,8 +193,8 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
         NovaTarefaDialog ntDialog = new NovaTarefaDialog(new DialogCallback() {
             @Override
             public void onDialogCallback() {
-                getDados(tl_lbl_qtd_emails, tl_lbl_qtd_visitas, tl_lbl_qtd_reunioes, tl_lbl_qtd_propostas, tl_lbl_qtd_ligacoes, tl_lbl_qtd_outros);
                 adapter.updateList(tarefas);
+                getDados(tl_lbl_qtd_emails, tl_lbl_qtd_visitas, tl_lbl_qtd_reunioes, tl_lbl_qtd_propostas, tl_lbl_qtd_ligacoes, tl_lbl_qtd_outros);
             }
         });
 
