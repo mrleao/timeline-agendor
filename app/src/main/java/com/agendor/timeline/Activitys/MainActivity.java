@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
 
     public ConstraintLayout container_vazio;
 
+    public View lt_view_barra3;
+
     public interface DialogCallback {
         public void onDialogCallback();
     }
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
         tl_lbl_qtd_propostas = findViewById(R.id.tl_lbl_qtd_propostas);
         tl_lbl_qtd_reunioes = findViewById(R.id.tl_lbl_qtd_reunioes);
         tl_lbl_qtd_visitas = findViewById(R.id.tl_lbl_qtd_visitas);
+        lt_view_barra3 = findViewById(R.id.lt_view_barra3);
 
         container_vazio = findViewById(R.id.container_vazio);
 
@@ -101,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
                     return;
                 }
                 Log.d("result.toString()", result.toString());
+
                 for (int i = 0; i < result.size(); i++) {
                     Tarefa item = new Tarefa(
                             result.get(i).getAsJsonObject().get("Id").getAsInt(),
@@ -168,8 +172,10 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
 
                 if (result.toString() == null || result.toString().trim().isEmpty() || result.toString().equals("[]")){
                     container_vazio.setVisibility(View.VISIBLE);
+                    lt_view_barra3.setVisibility(View.GONE);
                 }else{
                     container_vazio.setVisibility(View.GONE);
+                    lt_view_barra3.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -188,12 +194,12 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
             @Override
             public void onDialogCallback() {
                 getDados(tl_lbl_qtd_emails, tl_lbl_qtd_visitas, tl_lbl_qtd_reunioes, tl_lbl_qtd_propostas, tl_lbl_qtd_ligacoes, tl_lbl_qtd_outros);
+                adapter.updateList(tarefas);
             }
         });
 
         ntDialog.show(getSupportFragmentManager(), "Nova terefa");
     }
-
 
     @Override
     public void applyTexts(String clientetxt) {

@@ -5,7 +5,8 @@
     android:id="@+id/tl_container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitys.MainActivity" >
+    android:background="@color/white"
+    tools:context=".Activitys.MainActivity">
 
     <View
         android:id="@+id/lt_view_barra3"
@@ -14,6 +15,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:background="@color/black"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/lt_fabtn_icone"
         app:layout_constraintEnd_toEndOf="@+id/tl_fbtn_adicionar"
         app:layout_constraintStart_toStartOf="@+id/tl_fbtn_adicionar"
@@ -76,8 +78,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="1dp"
+            android:paddingStart="1dp"
             android:paddingLeft="1dp"
             android:paddingTop="1dp"
+            android:paddingEnd="20dp"
             android:paddingRight="20dp"
             android:paddingBottom="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,9 +89,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:paddingStart="1dp"
-            android:paddingEnd="20dp">
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"

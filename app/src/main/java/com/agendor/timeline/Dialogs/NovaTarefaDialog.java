@@ -50,7 +50,6 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
 
     private View view;
 
-    private Calendar c;
     DatePickerDialog dpd;
 
     TimePickerDialog timeDialog;
@@ -99,15 +98,18 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
             @Override
             public void onFocusChange(View view,  boolean hasFocus) {
                 if (hasFocus){
-                    c = Calendar.getInstance();
+                    Calendar c = Calendar.getInstance();
                     int dia = c.get(Calendar.DAY_OF_MONTH);
-                    int mes = c.get(Calendar.MONTH);
+                    int mes =  c.get(Calendar.MONTH);
                     int ano = c.get(Calendar.YEAR);
+
+                    Log.d("MES", ""+mes);
 
                     dpd = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker datePicker, int mYear, int mMonth, int mDay) {
-                            dataExecucao.setText(mDay+"-"+mMonth+"-"+mYear);
+                            int mMes = mMonth + 1;
+                            dataExecucao.setText(mDay+"-"+mMes+"-"+mYear);
                         }
                     }, ano, mes, dia);
                     dpd.show();
@@ -119,7 +121,7 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
             @Override
             public void onFocusChange(View view,  boolean hasFocus) {
                 if (hasFocus){
-                    c = Calendar.getInstance();
+                    Calendar c = Calendar.getInstance();
                     int hora = c.get(Calendar.HOUR_OF_DAY);
                     int min = c.get(Calendar.MINUTE);
 
@@ -192,8 +194,8 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
                                 Toast.LENGTH_LONG).show();
                     }else{
 
-                        callback.onDialogCallback();
                         salvar(sCliente, idTarefa, sDescricao, sDataExecucao);
+                        callback.onDialogCallback();
                         getDialog().dismiss();
                     }
 

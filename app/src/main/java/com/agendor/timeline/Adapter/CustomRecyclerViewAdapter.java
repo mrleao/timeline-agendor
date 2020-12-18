@@ -55,6 +55,8 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
             mData.clear();
             mData.addAll(items);
             notifyDataSetChanged();
+        }else{
+            notifyDataSetChanged();
         }
     }
 
@@ -75,8 +77,6 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
 
         holder.lt_lbl_cliente.setText(tarefa.getCliente());
         holder.lt_lbl_descricao.setText(tarefa.getDescricao());
-
-        SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
         try {
             Date data = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(tarefa.getData());
