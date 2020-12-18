@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -183,18 +184,13 @@ public class MainActivity extends AppCompatActivity implements NovaTarefaDialog.
 
     public void openDialog(View v) {
 
-
         NovaTarefaDialog ntDialog = new NovaTarefaDialog(new DialogCallback() {
             @Override
             public void onDialogCallback() {
-                Log.d("callback", "bakc");
-
                 getDados(tl_lbl_qtd_emails, tl_lbl_qtd_visitas, tl_lbl_qtd_reunioes, tl_lbl_qtd_propostas, tl_lbl_qtd_ligacoes, tl_lbl_qtd_outros);
-
             }
         });
 
-        // NovaTarefaDialog ntDialog = new NovaTarefaDialog();
         ntDialog.show(getSupportFragmentManager(), "Nova terefa");
     }
 

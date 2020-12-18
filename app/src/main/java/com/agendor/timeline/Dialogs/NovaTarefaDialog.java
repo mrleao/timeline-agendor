@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.media.Image;
@@ -18,8 +20,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.agendor.timeline.Activitys.MainActivity;
@@ -30,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class NovaTarefaDialog extends AppCompatDialogFragment {
@@ -45,6 +50,12 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
 
     private View view;
 
+    private Calendar c;
+    DatePickerDialog dpd;
+
+    TimePickerDialog timeDialog;
+
+
     private static final int[] idArray = {
             R.id.nt_img_btn_email,
             R.id.nt_img_btn_telefone,
@@ -55,8 +66,8 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
     };
 
     public static final String SHARED_PREFS = "sharedPrefs";
+
     int i;
-    //private List<ImageButton> imageButton;
 
     private ImageButton[] imageButton = new ImageButton[idArray.length];
 
@@ -80,7 +91,49 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
         dataExecucao = view.findViewById(R.id.nt_edt_data);
         horaExecucao = view.findViewById(R.id.nt_edt_hora);
 
+        horaExecucao = view.findViewById(R.id.nt_edt_hora);
+
         builder.setView(view);
+
+        dataExecucao.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view,  boolean hasFocus) {
+                if (hasFocus){
+                    c = Calendar.getInstance();
+                    int dia = c.get(Calendar.DAY_OF_MONTH);
+                    int mes = c.get(Calendar.MONTH);
+                    int ano = c.get(Calendar.YEAR);
+
+                    dpd = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker datePicker, int mYear, int mMonth, int mDay) {
+                            dataExecucao.setText(mDay+"-"+mMonth+"-"+mYear);
+                        }
+                    }, ano, mes, dia);
+                    dpd.show();
+                }
+            }
+        });
+
+        horaExecucao.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view,  boolean hasFocus) {
+                if (hasFocus){
+                    c = Calendar.getInstance();
+                    int hora = c.get(Calendar.HOUR_OF_DAY);
+                    int min = c.get(Calendar.MINUTE);
+
+                    timeDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timepicker, int mHour, int mMin) {
+                            horaExecucao.setText(mHour+":"+mMin+":00");
+                        }
+                    }, hora , min, true);
+                    timeDialog.show();
+                }
+            }
+        });
+
         for (i = 0; i < idArray.length; i++){
 
             imageButton[i] =  view.findViewById(idArray[i]);
@@ -151,7 +204,6 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
             }
         });
 
-
         return builder.create();
     }
 
@@ -198,6 +250,8 @@ public class NovaTarefaDialog extends AppCompatDialogFragment {
             throw new ClassCastException(context.toString() + "Imlemente NovaTerefaDialog");
         }
     }
+
+
 
     public interface DialogListener{
         void applyTexts(String clientetxt);
