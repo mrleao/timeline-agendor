@@ -10,8 +10,12 @@
       nt => nova tarefa
       tl => timeline
 
+    # LEGENDA GENERICOS
+      name
+
     # sem prefixo da tela pode ser usada em qualquer UI, com prefixo não
     # manter padrão prefixo ui > componente > nome
+    # genericos não tem distinção de tela, podem ser usuários em vários componentes e UI.
     -->
 
     <string name="app_name">Timeline</string>
@@ -21,12 +25,30 @@
 
     <string name="tl_btn_adicionar">Adicionar terefa</string>
 
-    <string name="lbl_visitas">Visitas</string>
-    <string name="lbl_ligacoes">Ligações</string>
+
     <string name="lbl_emails">E-mails</string>
+    <string name="lbl_ligacao">Ligações</string>
+    <string name="lbl_proposta">Propostas</string>
+    <string name="lbl_reuniao">Reuniões</string>
+    <string name="lbl_visita">Visitas</string>
+    <string name="lbl_outro">Outros</string>
+
     <string name="lbl_quando">Quando?</string>
     <string name="lbl_cliente">Cliente</string>
-    <string name="documento">Documento</string>
+
+
+    <string name="data">Data</string>
+    <string name="horario">Horário</string>
+    <string name="nome">Nome</string>
+    <string name="escreva">Escreva algum comentário importante aqui...</string>
+    <string name="ver_mais">Ver mais</string>
+    <string name="_00">00</string>
+    <string name="reuniao">reuniao</string>
+    <string name="exemplo_horario">Ter\n14:12</string>
+    <string name="exemplo_descricao">exemplo_descricao</string>
+    <string name="exemplo_cliente">nome cliente</string>
+    <string name="vazio">Nenhuma tarefa encontrada para os pŕoximos 7 dias.</string>
+
 
 
 </resources>

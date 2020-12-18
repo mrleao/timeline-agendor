@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/nt_btn_cadastrar"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:text="@string/nt_btn_agendar"
@@ -89,6 +89,7 @@
             android:drawableEnd="@drawable/ic_calendario"
             android:drawableRight="@drawable/ic_calendario"
             android:ems="10"
+            android:hint="@string/data"
             android:inputType="date"
             android:nextFocusLeft="@id/nt_edt_hora"
             android:paddingLeft="10dp"
@@ -110,8 +111,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
+            android:autofillHints=""
             android:background="@color/azul_bg_inputs"
             android:ems="10"
+            android:hint="@string/horario"
             android:inputType="time"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
@@ -121,8 +124,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/nt_edt_data"
-            app:layout_constraintTop_toBottomOf="@+id/nt_lbl_data"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/nt_lbl_data" />
 
         <EditText
             android:id="@+id/nt_edt_cliente"
@@ -136,12 +138,14 @@
             android:autofillHints=""
             android:background="@color/azul_bg_inputs"
             android:ems="10"
+            android:hint="@string/nome"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
             android:paddingRight="10dp"
             android:paddingBottom="5dp"
             android:textColorLink="@color/azul_agendor"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nt_lbl_cliente" />
@@ -158,6 +162,8 @@
             android:layout_marginBottom="20dp"
             android:background="@color/azul_bg_inputs"
             android:ems="10"
+            android:hint="@string/escreva"
+            android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:lines="4"
             android:maxLines="4"
@@ -168,14 +174,15 @@
             android:paddingBottom="5dp"
             android:shadowColor="#000000"
             android:textColorLink="@color/azul_agendor"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/nt_level_descricao"
-            app:layout_constraintTop_toBottomOf="@+id/nt_edt_cliente"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/nt_edt_cliente" />
 
         <ImageButton
             android:id="@+id/nt_img_btn_email"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
@@ -185,10 +192,11 @@
             android:layout_marginRight="5dp"
             android:background="@drawable/borda_redonda"
             android:contentDescription="@string/lbl_emails"
-            android:src="@drawable/ic_mail"
+            android:focusableInTouchMode="false"
             app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_telefone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_mail" />
 
         <ImageButton
             android:id="@+id/nt_img_btn_telefone"
@@ -200,11 +208,11 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/borda_redonda"
-            android:contentDescription="@string/lbl_ligacoes"
-            android:src="@drawable/ic_telefone"
+            android:contentDescription="@string/lbl_ligacao"
             app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_documento"
             app:layout_constraintStart_toEndOf="@+id/nt_img_btn_email"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_telefone"/>
 
         <ImageButton
             android:id="@+id/nt_img_btn_documento"
@@ -216,42 +224,11 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/borda_redonda"
-            android:contentDescription="@string/documento"
-            android:src="@drawable/ic_documento"
+            android:contentDescription="@string/lbl_proposta"
             app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_negociacao"
             app:layout_constraintStart_toEndOf="@+id/nt_img_btn_telefone"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/nt_img_btn_localizacao"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/borda_redonda"
-            android:src="@drawable/ic_location"
-            app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_mais"
-            app:layout_constraintStart_toEndOf="@+id/nt_img_btn_negociacao"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/nt_img_btn_mais"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/borda_redonda"
-            android:contentDescription="Ver mais"
-            android:src="@drawable/ic_more"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nt_img_btn_localizacao"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_documento" />
 
         <ImageButton
             android:id="@+id/nt_img_btn_negociacao"
@@ -263,10 +240,44 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/borda_redonda"
-            android:src="@drawable/ic_maleta"
+            android:contentDescription="@string/lbl_reuniao"
             app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_localizacao"
             app:layout_constraintStart_toEndOf="@+id/nt_img_btn_documento"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_maleta" />
+
+        <ImageButton
+            android:id="@+id/nt_img_btn_localizacao"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/borda_redonda"
+            android:contentDescription="@string/lbl_visita"
+            app:layout_constraintEnd_toStartOf="@+id/nt_img_btn_mais"
+            app:layout_constraintStart_toEndOf="@+id/nt_img_btn_negociacao"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_location" />
+
+        <ImageButton
+            android:id="@+id/nt_img_btn_mais"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/borda_redonda"
+            android:contentDescription="@string/lbl_outro"
+            app:srcCompat="@drawable/ic_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nt_img_btn_localizacao"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_more" />
 
         <TextView
             android:id="@+id/nt_level_descricao"
